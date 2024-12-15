@@ -1,0 +1,102 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hindari scroll */
+    position: relative;
+    background: url('../img/background1.jpg') no-repeat center center/cover;
+
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Ambil gambar dari background body */
+    filter: blur(4px); /* Efek blur */
+    z-index: -1; /* Meletakkan di belakang form login */
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Putih transparan */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #0a3d72; /* Biru gelap */
+}
+
+form {
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #0a3d72;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #d1dfe8;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #1e4f8d; /* Warna fokus */
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #2a6ba1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e4f8d; /* Warna hover */
+}
+
+.error {
+    color: #e74c3c;
+    margin-top: 15px;
+    font-size: 14px;
+}
